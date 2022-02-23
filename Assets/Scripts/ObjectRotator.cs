@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ObjectRotator : MonoBehaviour
 {
-    public float RotatePerSecond = 30f;
+    public Vector3 RotatePerSecond = new Vector3(0f, 30f, 0f);
 
     private void Update()
     {
-        transform.Rotate(0f, RotatePerSecond * Time.deltaTime, 0f);
+        transform.Rotate(RotatePerSecond * Time.deltaTime);
     }
 }

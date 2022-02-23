@@ -12,7 +12,7 @@ public class ObjectMover : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= ReverseCycleDuration)
         {
-            directionMultipicator *= -1;
+            directionMultipicator *= -1f;
             timer -= ReverseCycleDuration;
         }
         
