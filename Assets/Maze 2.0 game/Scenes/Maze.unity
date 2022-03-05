@@ -326,6 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5844cdbc3473234c9c9f243edcfd7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: -2, y: 0, z: 0}
+  ReversePosition: 1.5
 --- !u!1 &1368339696
 GameObject:
   m_ObjectHideFlags: 0
