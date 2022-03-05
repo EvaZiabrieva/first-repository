@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovementControler : MonoBehaviour
 {
-    public CharacterController Controller;
+    public Rigidbody Rigidbody;
     public float PlayerSpeed = 5f;
     void Start()
     {
@@ -15,6 +15,6 @@ public class MovementControler : MonoBehaviour
     {
         Vector3 move = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
         move *= PlayerSpeed * Time.deltaTime;
-        Controller.Move(move);
+        Rigidbody.MovePosition(move + transform.position);
     }
 }

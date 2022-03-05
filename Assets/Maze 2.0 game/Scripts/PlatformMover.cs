@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlatformMover : MonoBehaviour
 {
+    public Rigidbody Rigidbody;
     public Vector3 Offset = new Vector3(0f, 0f, 5f);
-    //public float MovingSpeed = 5f;
     public float ReversePosition = 3f;
     private float timer = 0f;
     private float directionManipulator = 1f;
@@ -17,6 +17,6 @@ public class PlatformMover : MonoBehaviour
             directionManipulator *= -1f;
             timer -= ReversePosition;
         }
-        transform.position += Offset * directionManipulator * Time.deltaTime;
+        Rigidbody.MovePosition(Offset * directionManipulator * Time.deltaTime + transform.position);
     }
 }
