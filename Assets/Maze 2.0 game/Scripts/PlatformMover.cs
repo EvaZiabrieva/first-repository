@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformMover : MonoBehaviour
@@ -11,15 +9,17 @@ public class PlatformMover : MonoBehaviour
     private float timer = 0f;
     private float directionManipulator = 1f;
     private Vector3 startPosition;
+    
     private void Start()
     {
         startPosition = transform.position;
     }
-    private void Update()
+    
+    private void FixedUpdate()
     {
         if (!IsMoving)
             return;
-        timer += Time.deltaTime * directionManipulator;
+        timer += Time.fixedDeltaTime * directionManipulator;
         if (timer >= ReversePosition )
         {
             directionManipulator = -1f;
@@ -29,5 +29,12 @@ public class PlatformMover : MonoBehaviour
             directionManipulator = 1f;
         }
         Rigidbody.MovePosition(Offset * timer + startPosition);
+    }
+
+    public void ResetPlatform()
+    {
+        Rigidbody.MovePosition(startPosition);
+        timer = 0f;
+        directionManipulator = 1f;
     }
 }

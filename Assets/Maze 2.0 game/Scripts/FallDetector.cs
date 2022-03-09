@@ -1,15 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FallDetector : MonoBehaviour
 {
     public Vector3 start;
-    public Vector3 platformStart;
-    public PlatformMover PlatformMover;
-    private void OnTriggerEnter(Collider other)
+    public PlatformList PlatformList;
+
+    private void OnTriggerEnter(Collider collider)
     {
-        other.transform.position = start; 
-        PlatformMover.transform.position = platformStart;
+        if (collider.GetComponent<MovementControler>() != null)
+        {
+            collider.transform.position = start;
+            for (int i = 0; i < PlatformList.PlatformMovers.Length; i++)
+            {
+                PlatformList.PlatformMovers[i].ResetPlatform();
+            }
+        }
     }
 }

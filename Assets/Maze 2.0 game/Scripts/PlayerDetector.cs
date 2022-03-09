@@ -5,12 +5,18 @@ using UnityEngine;
 public class PlayerDetector : MonoBehaviour
 {
     public PlatformMover PlatformMover;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        PlatformMover.IsMoving = true;
+        if (collider.GetComponent<MovementControler>() != null)
+        {
+            PlatformMover.IsMoving = true;
+        }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider collider)
     {
-        PlatformMover.IsMoving = false;
+        if (collider.GetComponent<MovementControler>() != null)
+        {
+            PlatformMover.IsMoving = false;
+        }
     }
 }
