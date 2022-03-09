@@ -7,10 +7,10 @@ public class PlayerDetector : MonoBehaviour
     public PlatformMover PlatformMover;
     private void OnTriggerEnter(Collider other)
     {
-        PlatformMover.enabled = true;
+        PlatformMover.IsMoving = true;
     }
     private void OnTriggerExit(Collider other)
     {
-        PlatformMover.enabled = false;
+        PlatformMover.IsMoving = false;
     }
 }

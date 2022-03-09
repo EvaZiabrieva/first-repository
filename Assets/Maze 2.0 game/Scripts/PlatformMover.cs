@@ -5,18 +5,29 @@ using UnityEngine;
 public class PlatformMover : MonoBehaviour
 {
     public Rigidbody Rigidbody;
+    public bool IsMoving;
     public Vector3 Offset = new Vector3(0f, 0f, 5f);
     public float ReversePosition = 3f;
     private float timer = 0f;
     private float directionManipulator = 1f;
-    void Update()
+    private Vector3 startPosition;
+    private void Start()
     {
-        timer += Time.deltaTime;
-        if (timer >= ReversePosition)
+        startPosition = transform.position;
+    }
+    private void Update()
+    {
+        if (!IsMoving)
+            return;
+        timer += Time.deltaTime * directionManipulator;
+        if (timer >= ReversePosition )
         {
-            directionManipulator *= -1f;
-            timer -= ReversePosition;
+            directionManipulator = -1f;
         }
-        Rigidbody.MovePosition(Offset * directionManipulator * Time.deltaTime + transform.position);
+        if(timer <= 0)
+        {
+            directionManipulator = 1f;
+        }
+        Rigidbody.MovePosition(Offset * timer + startPosition);
     }
 }

@@ -6,10 +6,6 @@ public class MovementControler : MonoBehaviour
 {
     public Rigidbody Rigidbody;
     public float PlayerSpeed = 5f;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
