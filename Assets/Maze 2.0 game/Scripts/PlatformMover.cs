@@ -21,13 +21,9 @@ public class PlatformMover : MonoBehaviour
             return;
         timer += Time.fixedDeltaTime * directionManipulator;
         if (timer >= ReversePosition )
-        {
             directionManipulator = -1f;
-        }
         if(timer <= 0)
-        {
             directionManipulator = 1f;
-        }
         Rigidbody.MovePosition(Offset * timer + startPosition);
     }
 
