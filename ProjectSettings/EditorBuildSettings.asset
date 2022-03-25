@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Maze 2.0 game/Scenes/Menu.unity
-    guid: 98596da85e7643b42bd15e16f8deb872
-  - enabled: 1
-    path: Assets/Maze 2.0 game/Scenes/Level 1.unity
-    guid: 2402a0a13d78f164f8b58c517fba9e6a
-  - enabled: 1
-    path: Assets/Maze 2.0 game/Scenes/Level 2.unity
-    guid: 23e7e61776e551944941c1fb67d48fac
-  - enabled: 1
-    path: Assets/Maze 2.0 game/Scenes/Level 3.unity
-    guid: 069b65624f5264b40aa48fec7d6a3de4
+    path: Assets/FPS/Scenes/Shooter.unity
+    guid: 70f6e43b50bbf1a4f85de1afae186154
   m_configObjects: {}
