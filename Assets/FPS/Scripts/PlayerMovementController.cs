@@ -4,11 +4,10 @@ public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private Transform _camera;
-    [SerializeField, Min(0f)] private float _speed = 10f;
+    [SerializeField, Min(0f)] private float _rotationHorizontalSensetivity = 10f;
 
     private void FixedUpdate()
     {
-        _rigidbody.MoveRotation(Quaternion.Euler(Input.GetAxis("Vertical"), _speed * Input.mousePosition.x, Input.GetAxis("Horizontal")));
-        
+        _rigidbody.MoveRotation(Quaternion.Euler(0f, _rotationHorizontalSensetivity * Input.mousePosition.x, 0f));
     }
 }
